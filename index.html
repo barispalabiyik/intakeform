@@ -79,15 +79,15 @@
               <div class="radio-group">
                 <label
                   >Long Term Rental
-                  <input type="radio" name="loanProgram" id="LTR" value="LTR" />
+                  <input type="radio" name="loanProgram" value="LTR" />
                 </label>
                 <label
                   >Short Term Bridge
-                  <input type="radio" name="loanProgram" id="STB" value="STB" />
+                  <input type="radio" name="loanProgram" value="STB" />
                 </label>
                 <label
                   >Ground Up Construction
-                  <input type="radio" name="loanProgram" id="GUC" value="GUC" />
+                  <input type="radio" name="loanProgram" value="GUC" />
                 </label>
               </div>
             </section>
@@ -159,21 +159,11 @@
               <section class="radio-group">
                 <label
                   >Yes
-                  <input
-                    type="radio"
-                    name="renovationRadio"
-                    id="renovationYes"
-                    value="yes"
-                  />
+                  <input type="radio" name="renovationRadio" value="yes" />
                 </label>
                 <label
                   >No
-                  <input
-                    type="radio"
-                    name="renovationRadio"
-                    id="renovationNo"
-                    value="no"
-                  />
+                  <input type="radio" name="renovationRadio" value="no" />
                 </label>
               </section>
             </div>
@@ -282,19 +272,15 @@
               <div class="radio-group">
                 <label
                   >Sell
-                  <input type="radio" name="exitStrat" id="exitStratSell" />
+                  <input type="radio" name="exitStrat" value="sell" />
                 </label>
                 <label
                   >Refinance
-                  <input
-                    type="radio"
-                    name="exitStrat"
-                    id="exitStratRefinance"
-                  />
+                  <input type="radio" name="exitStrat" value="refinance" />
                 </label>
                 <label
                   >Unsure
-                  <input type="radio" name="exitStrat" id="exitStratUnsure" />
+                  <input type="radio" name="exitStrat" value="unsure" />
                 </label>
               </div>
             </section>
@@ -695,7 +681,8 @@
             </div>
             <!--Multi Use Section End-->
           </section>
-          <section class="renovationDetails">
+          <section id="renovationDetailsSection" class="renovationDetails">
+            <!--Renovation Details Section -->
             <h2>Renovation Details</h2>
             <section class="forms">
               <label
@@ -708,6 +695,13 @@
                   type="text"
                   name="renovationBudget"
                 />
+              </label>
+              <label
+                class="tooltip"
+                data-text="After repair value. The estimated value of the property once renovation and/or stabilization is complete. "
+              >
+                What is the estimated ARV?
+                <input id="estimatedARV" type="text" name="estimatedARV" />
               </label>
               <section id="doesRenovationInclude" class="radio-section">
                 <h3>Does the renovation include any of the following?</h3>
@@ -746,13 +740,7 @@
                 (Approx.) size of addition in square feet:
                 <input type="text" name="approxSizeOfAddition" />
               </label>
-              <label
-                class="tooltip"
-                data-text="After repair value. The estimated value of the property once renovation and/or stabilization is complete. "
-              >
-                What is the estimated ARV?
-                <input id="estimatedARV" type="text" name="estimatedARV" />
-              </label>
+
               <label id="estimatedMonthlyMarketRent">
                 What is the estimated monthly market rent for the property as
                 renovated/stabilized?

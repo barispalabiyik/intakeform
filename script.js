@@ -135,7 +135,7 @@ $(document).ready(function () {
   // Renovation Details Conditional Fields
 
   $(
-    "#brieflyDescribe,#approxSizeOfAddition,#estimatedMonthlyMarketRent"
+    "#brieflyDescribe,#approxSizeOfAddition,#estimatedMonthlyMarketRent,#renovationDetailsSection"
   ).addClass("hidden");
   $("#changeOfPropertyType").change(function () {
     let isChecked =
@@ -150,6 +150,33 @@ $(document).ready(function () {
   $("#changeOfAddition").change(function () {
     let isChecked = $(this).is(":checked");
     ChangeVisiblity(isChecked, "#approxSizeOfAddition");
+  });
+
+  // Since fields only appear when STB is selected, we don't need to check for it in below two functions
+
+  $("input[type=radio][name=renovationRadio]").change(function () {
+    let renovationRadio = $(this).val();
+    let exitStrat = $("input[type=radio][name=exitStrat]").val();
+    ChangeVisiblity(
+      renovationRadio == "yes" && exitStrat == "refinance",
+      "#estimatedMonthlyMarketRent"
+    );
+  });
+
+  $("input[type=radio][name=exitStrat]").change(function () {
+    let exitStrat = $(this).val();
+    let renovationRadio = $("input[type=radio][name=renovationRadio]").val();
+    ChangeVisiblity(
+      renovationRadio == "yes" && exitStrat == "refinance",
+      "#estimatedMonthlyMarketRent"
+    );
+  });
+
+  // Since fields only appear when !GUC selected, we don't need to check for it in below function
+
+  $("input[type=radio][name=renovationRadio]").change(function () {
+    let selected = $(this).val();
+    ChangeVisiblity(selected == "yes", "#renovationDetailsSection");
   });
 
   // Conditional Field Logic End
