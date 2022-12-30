@@ -698,12 +698,13 @@
           <section class="renovationDetails">
             <h2>Renovation Details</h2>
             <section class="forms">
-              <label>
+              <label
+                class="tooltip"
+                data-text="This should not include improvements already made to the property. This amount should only be what is needed to complete the renovation. "
+              >
                 What is the overall renovation budget?
                 <input
-                  class="tooltip"
                   id="renovationBudget"
-                  title="This should not include improvements already made to the property. This amount should only be what is needed to complete the renovation. "
                   type="text"
                   name="renovationBudget"
                 />
@@ -745,15 +746,12 @@
                 (Approx.) size of addition in square feet:
                 <input type="text" name="approxSizeOfAddition" />
               </label>
-              <label>
+              <label
+                class="tooltip"
+                data-text="After repair value. The estimated value of the property once renovation and/or stabilization is complete. "
+              >
                 What is the estimated ARV?
-                <input
-                  class="tooltip"
-                  id="estimatedARV"
-                  title="After repair value. The estimated value of the property once renovation and/or stabilization is complete. "
-                  type="text"
-                  name="estimatedARV"
-                />
+                <input id="estimatedARV" type="text" name="estimatedARV" />
               </label>
               <label id="estimatedMonthlyMarketRent">
                 What is the estimated monthly market rent for the property as

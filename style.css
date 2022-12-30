@@ -178,20 +178,27 @@ body {
   background: #f2f2f2;
   cursor: pointer;
 }
-#intakeform .ui-tooltip {
-  background: var(--input-hover-bg);
-  border-radius: var(--border-radius);
-  border: solid 1px var(--brand-color);
-  padding: 10px;
-  max-width: 300px;
-  font-size: 12px;
-  font-weight: 500;
+#intakeform .tooltip {
+  position: relative;
 }
-#intakeform .ui-helper-hidden-accessible {
-  filter: opacity(0);
-  z-index: -9999;
+#intakeform .tooltip:before {
+  content: attr(data-text);
   position: absolute;
+  top: -80px;
   left: -9999px;
+  width: 300px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  background: var(--input-bg);
+  border: 2px solid var(--brand-color);
+  text-align: center;
+  font-size: 12px;
+  filter: opacity(0);
+  transition: filter 0.5s;
+}
+#intakeform .tooltip:hover:before {
+  filter: opacity(1);
+  left: 0;
 }
 
 @media (max-width: 600px) {
