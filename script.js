@@ -96,7 +96,7 @@ $(document).ready(function () {
     );
     ChangeVisiblity(
       selected == "mixed",
-      "#residentialUnits,#numOfComUnits,#totalUnitCount,#combinedSqFt,#combinedCommercial,#totalSqFt,#vacantResidential,#vacantCommercial,#currentRentalIncomePercentage,#currentTotalIncomeValue,#expectedTotalIncomeAnually,#multiBorrowerExperience,#multiOtherManagement,##MultiExitStrat"
+      "#residentialUnits,#numOfComUnits,#totalUnitCount,#combinedSqFt,#combinedCommercial,#totalSqFt,#vacantResidential,#vacantCommercial,#currentRentalIncomePercentage,#currentTotalIncomeValue,#expectedTotalIncomeAnually,#multiBorrowerExperience,#multiOtherManagement,#MultiExitStrat,#multiOtherManagementAfterStabilized,##multiAnnualTax"
     );
   });
   $("input[type=radio][name=curTotalIncome]").change(function () {
@@ -112,6 +112,13 @@ $(document).ready(function () {
     let selected = $(this).children("option:selected").val();
     ChangeVisiblity(selected == "other", "#multiOtherManagement");
   });
+  $("#PropertyManagementAfterStabilized").change(function () {
+    let selected = $(this).children("option:selected").val();
+    ChangeVisiblity(
+      selected == "other",
+      "#multiOtherManagementAfterStabilized"
+    );
+  });
 
   $("input[type=radio][name=loanProgram]").change(function () {
     let selected = $(this).val();
@@ -119,6 +126,7 @@ $(document).ready(function () {
       selected == "STB" && $("#renovationRadio").val() == "no",
       "#MultiExitStrat"
     );
+    ChangeVisiblity(selected == "LTR", "#multiAnnualTax");
   });
   // Conditional Field Logic End
 });

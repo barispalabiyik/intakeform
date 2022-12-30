@@ -172,15 +172,18 @@ body {
   background: #f2f2f2;
   cursor: pointer;
 }
+
 @media (max-width: 600px) {
   #intakeform .forms {
     display: grid;
     grid-template-columns: 1fr;
   }
+  #intakeform .container {
+    min-width: 100%;
+  }
   #intakeform form {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    min-width: 100vw;
   }
 }

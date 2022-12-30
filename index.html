@@ -15,7 +15,8 @@
       <form id="lenderIntakeForm" action="posted.html" method="get">
         <fieldset>
           <h2>SUBJECT PROPERTY</h2>
-          <div class="forms">
+          <section class="forms">
+            <!--Subject Property Section-->
             <label
               >Property Type
               <select name="propertyType" id="propertyType">
@@ -64,9 +65,10 @@
               Describe Property Type
               <input type="text" name="describePType" />
             </label>
-          </div>
+            <!--Subject Property Section End-->
+          </section>
           <h2>LOAN INFORMATION</h2>
-
+          <!--Loan Information Section-->
           <section class="forms">
             <section class="radio-section">
               <h3>Loan Program</h3>
@@ -202,7 +204,20 @@
                 include renovations as part of the loan.
               </p>
             </div>
-            <div id="borrowerExperience" class="radio-section">
+            <label id="borrowerExperience">
+              What is the borrower experience level? (number of verifiable
+              properties sold or held in last three years)
+              <select name="borrowerExperience">
+                <option value="">Select experience level</option>
+                <option value="0">0</option>
+                <option value="1-2">1-2</option>
+                <option value="3-9">3-9</option>
+                <option value="10-19">10-19</option>
+                <option value="20-29">20-29</option>
+                <option value="30+">30+</option>
+                <span class="focus"></span></select
+            ></label>
+            <!--  <div id="borrowerExperience" class="radio-section">
               <h3>
                 What is the borrower experience level? (number of verifiable
                 properties sold or held in last three years)
@@ -257,7 +272,7 @@
                   />
                 </label>
               </section>
-            </div>
+            </div> -->
             <section id="exitStrat" class="radio-section">
               <h3>What is the exit strategy?</h3>
               <div class="radio-group">
@@ -279,9 +294,11 @@
                 </label>
               </div>
             </section>
+            <!--Loan Information Section End-->
           </section>
 
           <section id="gucSection" class="GUC">
+            <!--Ground Up Construction (GUC) Section-->
             <h2>Ground Up Construction (GUC)</h2>
             <section class="forms">
               <section class="radio-section">
@@ -469,8 +486,10 @@
                 </div>
               </section>
             </section>
+            <!--Ground Up Construction (GUC) Section End-->
           </section>
           <section id="multiUseSection" class="multiUseSection">
+            <!--Multi Use Section Start-->
             <h2>5+ MULTI / MIXED USE PROPERTY DETAILS</h2>
             <div class="forms">
               <label>
@@ -650,16 +669,17 @@
                     >Refinance
                     <input type="radio" name="MultiExitStrat" />
                   </label>
-                  <label
-                    >Unsure
-                    <input type="radio" name="exitStrat" id="exitStratUnsure" />
-                  </label>
                 </div>
               </section>
+              <label id="multiAnnualTax">
+                Annual property tax
+                <textarea type="text" name="multiAnnualTax"> </textarea>
+              </label>
             </div>
+            <!--Multi Use Section End-->
           </section>
-          <input class="submit" type="submit" value="Submit" />
         </fieldset>
+        <input class="submit" type="submit" value="Submit" />
       </form>
     </div>
   </body>
