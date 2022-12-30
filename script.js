@@ -132,6 +132,38 @@ $(document).ready(function () {
     );
     ChangeVisiblity(selected == "STB", "#multiOtherExpensesAsRenovated");
   });
+  // Renovation Details Conditional Fields
+  $("#renovationBudget").tooltip({});
+  $("#estimatedARV").tooltip({});
+  $(".tooltip").each(function (idx, element) {
+    // We cycle through the elements using each() so that we can choose the element specifically that we wish to clean up afterward
+    var ele = $(element);
+    ele.tooltip({
+      close: function (evt, ui) {
+        // Only get rid of extraneous elements. We'll keep the one that was creted last.
+        ele.data("ui-tooltip").liveRegion.children(":not(:last)").remove();
+      },
+    });
+  });
+
+  $(
+    "#brieflyDescribe,#approxSizeOfAddition,#estimatedMonthlyMarketRent"
+  ).addClass("hidden");
+  $("#changeOfPropertyType").change(function () {
+    let isChecked =
+      $(this).is(":checked") || $("#changeOfUnitCount").is(":checked");
+    ChangeVisiblity(isChecked, "#brieflyDescribe");
+  });
+  $("#changeOfUnitCount").change(function () {
+    let isChecked =
+      $(this).is(":checked") || $("#changeOfPropertyType").is(":checked");
+    ChangeVisiblity(isChecked, "#brieflyDescribe");
+  });
+  $("#changeOfAddition").change(function () {
+    let isChecked = $(this).is(":checked");
+    ChangeVisiblity(isChecked, "#approxSizeOfAddition");
+  });
+
   // Conditional Field Logic End
 });
 

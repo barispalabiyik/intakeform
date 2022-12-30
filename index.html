@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
     <title>Intake Form</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+    ></script>
     <script src="validation.js"></script>
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
@@ -690,6 +694,74 @@
               </label>
             </div>
             <!--Multi Use Section End-->
+          </section>
+          <section class="renovationDetails">
+            <h2>Renovation Details</h2>
+            <section class="forms">
+              <label>
+                What is the overall renovation budget?
+                <input
+                  class="tooltip"
+                  id="renovationBudget"
+                  title="This should not include improvements already made to the property. This amount should only be what is needed to complete the renovation. "
+                  type="text"
+                  name="renovationBudget"
+                />
+              </label>
+              <section id="doesRenovationInclude" class="radio-section">
+                <h3>Does the renovation include any of the following?</h3>
+                <div class="radio-group">
+                  <label
+                    >Change of property type / use
+                    <input
+                      type="checkbox"
+                      name="changeOfPropertyType"
+                      id="changeOfPropertyType"
+                    />
+                  </label>
+                  <label
+                    >Change of unit count
+                    <input
+                      type="checkbox"
+                      name="changeOfUnitCount"
+                      id="changeOfUnitCount"
+                    />
+                  </label>
+                  <label
+                    >Addition / Expansion
+                    <input
+                      type="checkbox"
+                      name="changeOfAddition"
+                      id="changeOfAddition"
+                    />
+                  </label>
+                </div>
+              </section>
+              <label id="brieflyDescribe">
+                Briefly describe changes:
+                <textarea type="text" name="brieflyDescribe"> </textarea>
+              </label>
+              <label id="approxSizeOfAddition">
+                (Approx.) size of addition in square feet:
+                <input type="text" name="approxSizeOfAddition" />
+              </label>
+              <label>
+                What is the estimated ARV?
+                <input
+                  class="tooltip"
+                  id="estimatedARV"
+                  title="After repair value. The estimated value of the property once renovation and/or stabilization is complete. "
+                  type="text"
+                  name="estimatedARV"
+                />
+              </label>
+              <label id="estimatedMonthlyMarketRent">
+                What is the estimated monthly market rent for the property as
+                renovated/stabilized?
+                <input type="text" name="estimatedMonthlyMarketRent" />
+              </label>
+              <!--Renovation Form End-->
+            </section>
           </section>
         </fieldset>
         <input class="submit" type="submit" value="Submit" />

@@ -168,6 +168,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.1);
+  font-weight: 500;
   align-items: center;
   padding: 10px;
   background: var(--input-bg);
@@ -176,6 +177,21 @@ body {
 #intakeform .radio-group label:hover {
   background: #f2f2f2;
   cursor: pointer;
+}
+#intakeform .ui-tooltip {
+  background: var(--input-hover-bg);
+  border-radius: var(--border-radius);
+  border: solid 1px var(--brand-color);
+  padding: 10px;
+  max-width: 300px;
+  font-size: 12px;
+  font-weight: 500;
+}
+#intakeform .ui-helper-hidden-accessible {
+  filter: opacity(0);
+  z-index: -9999;
+  position: absolute;
+  left: -9999px;
 }
 
 @media (max-width: 600px) {
