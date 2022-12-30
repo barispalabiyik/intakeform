@@ -174,12 +174,13 @@ body {
 }
 @media (max-width: 600px) {
   #intakeform .forms {
+    display: grid;
     grid-template-columns: 1fr;
   }
-  body {
-    min-height: 10vh;
-  }
-  #intakeform .container {
-    min-height: 10vh !important;
+  #intakeform form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 100vw;
   }
 }
