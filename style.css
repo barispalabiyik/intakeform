@@ -5,7 +5,7 @@
   --input-bg: #f7f7f7;
   --input-hover-bg: #f2f2f2;
   --error-color: red;
-  --error-bg: #ff8c8c;
+  --error-bg: #cc2c2c;
 }
 *,
 *::before,
@@ -24,7 +24,7 @@ body {
 }
 #intakeform .container {
   background-color: #fff;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   border-radius: var(--border-radius);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -49,9 +49,10 @@ body {
   flex-direction: column;
   padding: 20px;
 }
+
 #intakeform form .forms {
   border: 1px solid rgb(245, 245, 245);
-  padding: 20px;
+  padding: 15px;
   margin: 5px;
   border-radius: var(--border-radius);
 }
@@ -62,7 +63,8 @@ body {
 }
 #intakeform .important {
   background: var(--error-bg);
-  border: 2px solid var(--error-color);
+  color: #fff;
+  box-shadow: 0 0 10px 0 var(--error-bg);
   border-radius: var(--border-radius);
   padding: 1rem;
 }
@@ -105,8 +107,11 @@ body {
 #intakeform form input[type="submit"] {
   background-color: var(--brand-color);
   padding: 10px 30px;
+  text-transform: uppercase;
   font-weight: 500;
   font-size: 18px;
+  box-shadow: 0 0 7px 0 var(--brand-color);
+  margin-top: 20px;
   color: #fff;
   border: 1px solid var(--brand-color);
   cursor: pointer;
@@ -154,9 +159,9 @@ body {
 #intakeform .forms {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 15px;
+  justify-content: center;
 }
-
 #intakeform .radio-group label {
   display: flex;
   flex-direction: row;
