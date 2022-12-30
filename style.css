@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+:root {
+  --brand-color: #2c88dd;
+  --border-radius: 8px;
+  --input-bg: #f7f7f7;
+  --input-hover-bg: #f2f2f2;
+  --error-color: red;
+  --error-bg: #ff8c8c;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+#intakeform .container {
+  background-color: #fff;
+  min-height: 100vh;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+#intakeform fieldset {
+  border: none;
+  min-inline-size: auto;
+  padding: 0;
+  margin: 0;
+}
+#intakeform h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--brand-color);
+}
+#intakeform h2 {
+  text-align: center;
+  color: var(--brand-color);
+}
+#intakeform form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+#intakeform form .forms {
+  border: 1px solid rgb(245, 245, 245);
+  padding: 20px;
+  margin: 5px;
+  border-radius: var(--border-radius);
+}
+#intakeform form h3 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+#intakeform .important {
+  background: var(--error-bg);
+  border: 2px solid var(--error-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+#intakeform form label {
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+#intakeform form label:has(input[type="radio"]) {
+  font-weight: 500;
+}
+#intakeform form input,
+#intakeform form textarea,
+#intakeform select {
+  padding: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  accent-color: var(--brand-color);
+  background-color: var(--input-bg);
+  border: 0;
+}
+#intakeform form textarea:focus,
+#intakeform form select:focus {
+  outline: 2px solid var(--brand-color);
+}
+#intakeform form select:hover {
+  cursor: pointer;
+}
+#intakeform form input:hover,
+#intakeform select:hover {
+  background-color: var(--input-hover-bg);
+}
+#intakeform form input[type="submit"] {
+  background-color: var(--brand-color);
+  padding: 10px 30px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid var(--brand-color);
+  cursor: pointer;
+}
+#intakeform form input[type="submit"]:hover {
+  background-color: #fff;
+  color: var(--brand-color);
+  border: 1px solid var(--brand-color);
+}
+#intakeform form input[type="submit"]:active {
+  background-color: var(--brand-color);
+}
+#intakeform form input:focus {
+  outline: none;
+}
+#intakeform form input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+#intakeform form fieldset label.error {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 5px;
+  border: 0x solid var(--error-color);
+  width: 100%;
+  box-shadow: none;
+  background-color: transparent;
+  min-height: 10px;
+  max-height: 15px;
+}
+#intakeform form fieldset input.error {
+  border: 1px solid var(--error-color);
+}
+#intakeform form fieldset select.error {
+  border: 1px solid var(--error-color);
+}
+
+#intakeform .hidden {
+  display: none;
+}
+#intakeform .visible {
+  display: flex;
+  flex-direction: column;
+}
+#intakeform .forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#intakeform .radio-group label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.1);
+  align-items: center;
+  padding: 10px;
+  background: var(--input-bg);
+  border-radius: var(--border-radius);
+}
+#intakeform .radio-group label:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  #intakeform .forms {
+    grid-template-columns: 1fr;
+  }
+}

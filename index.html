@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta ptype="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intake Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="validation.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body id="intakeform">
+    <div class="container">
+      <form id="lenderIntakeForm" action="posted.html" method="get">
+        <fieldset>
+          <h2>SUBJECT PROPERTY</h2>
+          <div class="forms">
+            <label
+              >Property Type
+              <select name="propertyType" id="propertyType">
+                <option value="">Select a property type</option>
+                <option value="sfr">SFR</option>
+                <option value="townhome">Townhome</option>
+                <option value="condo">Condo</option>
+                <option value="twoFour">2-4 Unit</option>
+                <option value="multifamily">Multifamily 5+</option>
+                <option value="mixed">Mixed Use</option>
+                <option value="vacant">Vacant</option>
+                <option value="commercial">Commercial</option>
+                <option value="other">Other</option>
+                <span class="focus"></span></select
+            ></label>
+            <label id="howManyUnits"
+              >How Many Units? <input type="text" name="howManyUnits"
+            /></label>
+            <div class="commercial-important-note important">
+              <h3>Important!</h3>
+              <p>
+                At this time, we do not offer loans on commerical properties.
+              </p>
+            </div>
+            <label>
+              Street Address
+              <input type="text" name="street" />
+            </label>
+            <label id="unitNumber">
+              Unit Number
+              <input type="text" name="unitNumber" />
+            </label>
+            <label>
+              City
+              <input type="text" name="city" />
+            </label>
+            <label>
+              State
+              <input type="text" name="state" />
+            </label>
+            <label>
+              Zip Code
+              <input type="text" name="zip" />
+            </label>
+            <label id="describePType">
+              Describe Property Type
+              <input type="text" name="describePType" />
+            </label>
+          </div>
+          <h2>LOAN INFORMATION</h2>
+
+          <section class="forms">
+            <section class="radio-section">
+              <h3>Loan Program</h3>
+              <div class="radio-group">
+                <label
+                  >Long Term Rental
+                  <input type="radio" name="loanProgram" id="LTR" value="LTR" />
+                </label>
+                <label
+                  >Short Term Bridge
+                  <input type="radio" name="loanProgram" id="STB" value="STB" />
+                </label>
+                <label
+                  >Ground Up Construction
+                  <input type="radio" name="loanProgram" id="GUC" value="GUC" />
+                </label>
+              </div>
+            </section>
+            <section class="radio-section">
+              <h3>Loan Type</h3>
+              <div class="radio-group">
+                <label
+                  >Purchase
+                  <input
+                    type="radio"
+                    name="loanType"
+                    id="purchase"
+                    value="purchase"
+                  />
+                </label>
+                <label
+                  >Refinance
+                  <input
+                    type="radio"
+                    name="loanType"
+                    id="refinance"
+                    value="refinance"
+                  />
+                </label>
+              </div>
+            </section>
+            <section id="wholesalerIncludedSection" class="radio-section">
+              <h3>Assignment or wholesaler fee included?</h3>
+              <div class="radio-group">
+                <label
+                  >Yes
+                  <input
+                    type="radio"
+                    name="radioIncluded"
+                    id="radioIncludedYes"
+                    value="yes"
+                  />
+                </label>
+                <label
+                  >No
+                  <input
+                    type="radio"
+                    name="radioIncluded"
+                    id="radioIncludedNo"
+                    value="no"
+                  />
+                </label>
+                <label
+                  >Unsure
+                  <input
+                    type="radio"
+                    name="radioIncluded"
+                    id="unsure"
+                    value="unsure"
+                  />
+                </label>
+              </div>
+            </section>
+            <label id="purchasePrice"
+              >Purchase Price
+              <input type="text" name="purchasePrice" />
+            </label>
+            <label id="payoffAmount"
+              >Estimated Payoff Amount
+              <input type="text" name="payoffAmount" />
+            </label>
+            <div id="renovationRadio" class="radio-section">
+              <h3>Subject property in need of renovation?</h3>
+              <section class="radio-group">
+                <label
+                  >Yes
+                  <input
+                    type="radio"
+                    name="renovationRadio"
+                    id="renovationYes"
+                    value="yes"
+                  />
+                </label>
+                <label
+                  >No
+                  <input
+                    type="radio"
+                    name="renovationRadio"
+                    id="renovationNo"
+                    value="no"
+                  />
+                </label>
+              </section>
+            </div>
+            <div id="portfolioBlanket" class="radio-section">
+              <h3>Is this a portfolio/blanket loan?</h3>
+              <section class="radio-group">
+                <label
+                  >Yes
+                  <input
+                    type="radio"
+                    name="blanketRadio"
+                    id="blanketYes"
+                    value="yes"
+                  />
+                </label>
+                <label
+                  >No
+                  <input
+                    type="radio"
+                    name="blanketRadio"
+                    id="blanketNo"
+                    value="no"
+                  />
+                </label>
+              </section>
+            </div>
+            <div class="renovation-important-note important">
+              <h3>Important!</h3>
+              <p>
+                At this point, we do not offer loans on long term rentals in
+                need of renovation. Please consider a short term loan or do not
+                include renovations as part of the loan.
+              </p>
+            </div>
+            <div id="borrowerExperience" class="radio-section">
+              <h3>
+                What is the borrower experience level? (number of verifiable
+                properties sold or held in last three years)
+              </h3>
+              <section class="radio-group">
+                <label
+                  >0
+                  <input
+                    type="radio"
+                    name="borrowerExperience"
+                    id="borrower0"
+                  />
+                </label>
+                <label
+                  >1-2
+                  <input
+                    type="radio"
+                    name="borrowerExperience"
+                    id="borrower1-2"
+                  />
+                </label>
+                <label
+                  >3-9
+                  <input
+                    type="radio"
+                    name="borrowerExperience"
+                    id="borrower3-9"
+                  />
+                </label>
+                <label
+                  >10-19
+                  <input
+                    type="radio"
+                    name="borrowerExperience"
+                    id="borrower10-19"
+                  />
+                </label>
+                <label
+                  >20-29
+                  <input
+                    type="radio"
+                    name="borrowerExperience"
+                    id="borrower20-29"
+                  />
+                </label>
+                <label
+                  >30+
+                  <input
+                    type="radio"
+                    name="borrowerExperience"
+                    id="borrower30+"
+                  />
+                </label>
+              </section>
+            </div>
+            <section id="exitStrat" class="radio-section">
+              <h3>What is the exit strategy?</h3>
+              <div class="radio-group">
+                <label
+                  >Sell
+                  <input type="radio" name="exitStrat" id="exitStratSell" />
+                </label>
+                <label
+                  >Refinance
+                  <input
+                    type="radio"
+                    name="exitStrat"
+                    id="exitStratRefinance"
+                  />
+                </label>
+                <label
+                  >Unsure
+                  <input type="radio" name="exitStrat" id="exitStratUnsure" />
+                </label>
+              </div>
+            </section>
+          </section>
+
+          <section id="gucSection" class="GUC">
+            <h2>Ground Up Construction (GUC)</h2>
+            <section class="forms">
+              <section class="radio-section">
+                <h3>
+                  Does borrower have prior ground up construction experience?
+                </h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input type="radio" name="gucExperience" value="yes" />
+                  </label>
+                  <label
+                    >No
+                    <input type="radio" name="gucExperience" value="no" />
+                  </label>
+                </div>
+              </section>
+              <div class="guc-important-note important">
+                <h3>Important!</h3>
+                <p>
+                  We do not recommend you continue. At this time, it will be
+                  very difficult to approve a GUC loan for a borrower without
+                  prior ground up construction experience.
+                </p>
+              </div>
+              <section class="radio-section">
+                <h3>Is the borrower hiring a professional GC or builder?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input type="radio" name="gcOrBuilder" value="yes" />
+                  </label>
+                  <label
+                    >No
+                    <input type="radio" name="gcOrBuilder" value="no" />
+                  </label>
+                  <label
+                    >Self
+                    <input type="radio" name="gcOrBuilder" value="self" />
+                  </label>
+                </div>
+              </section>
+              <label>
+                Sponsor Net Worth
+                <input type="text" name="GUCsponsorNetWorth" />
+              </label>
+              <label>
+                Total Verifiable Assets/Liquidity
+                <input type="text" name="GUCtotalAssets" />
+              </label>
+              <label>
+                Total Hard Costs (do not include land cost)
+                <input type="text" name="GUCtotalHardCosts" />
+              </label>
+              <label>
+                Total Soft Costs (do not include land cost)
+                <input type="text" name="GUCtotalSoftCosts" />
+              </label>
+              <label>
+                Total Construction Costs
+                <input type="text" name="GUCtotalConsCost" />
+              </label>
+              <label>
+                As-Built Value
+                <input type="text" name="GUCbuiltValue" />
+              </label>
+
+              <section class="radio-section">
+                <h3>Exit Strategy</h3>
+                <div class="radio-group">
+                  <label
+                    >Sell
+                    <input type="radio" name="GUCexitStrat" value="sell" />
+                  </label>
+                  <label
+                    >Refinance
+                    <input type="radio" name="GUCexitStrat" value="refinance" />
+                  </label>
+                </div>
+              </section>
+              <label id="GUCestimatedRent">
+                Estimated Monthly Market Rent (As-Built)
+                <input type="text" name="GUCestimatedRent" />
+              </label>
+              <section class="radio-section">
+                <h3>Are all Entitlements in place?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input type="radio" name="GUCentitlements" value="yes" />
+                  </label>
+                  <label
+                    >No
+                    <input type="radio" name="GUCentitlements" value="no" />
+                  </label>
+                </div>
+              </section>
+              <section id="GUCentitlementsInPlace" class="radio-section">
+                <h3>Will entitlements be in place prior to closing?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input
+                      type="radio"
+                      name="GUCentitlementsInPlace"
+                      value="yes"
+                    />
+                  </label>
+                  <label
+                    >No
+                    <input
+                      type="radio"
+                      name="GUCentitlementsInPlace"
+                      value="no"
+                    />
+                  </label>
+                </div>
+              </section>
+              <section class="radio-section">
+                <h3>Are all full Plans & Specs available?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input
+                      type="radio"
+                      name="GUCplansSpecsAvailable"
+                      value="yes"
+                    />
+                  </label>
+                  <label
+                    >No
+                    <input
+                      type="radio"
+                      name="GUCplansSpecsAvailable"
+                      value="no"
+                    />
+                  </label>
+                </div>
+              </section>
+              <section id="GUCwillPlanInPlace" class="radio-section">
+                <h3>Will full Plans & Spec be in place prior to closing?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input type="radio" name="GUCwillPlanInPlace" value="yes" />
+                  </label>
+                  <label
+                    >No
+                    <input type="radio" name="GUCwillPlanInPlace" value="no" />
+                  </label>
+                </div>
+              </section>
+              <section class="radio-section">
+                <h3>Approved Permits in place?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input
+                      type="radio"
+                      name="GUCapprovedPermitsInPlace"
+                      value="yes"
+                    />
+                  </label>
+                  <label
+                    >No
+                    <input
+                      type="radio"
+                      name="GUCapprovedPermitsInPlace"
+                      value="no"
+                    />
+                  </label>
+                </div>
+              </section>
+              <section id="GUCapprovedPermits" class="radio-section">
+                <h3>Will Approved Permits be in place prior to closing?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input type="radio" name="GUCapprovedPermits" value="yes" />
+                  </label>
+                  <label
+                    >No
+                    <input type="radio" name="GUCapprovedPermits" value="no" />
+                  </label>
+                </div>
+              </section>
+            </section>
+          </section>
+          <section id="multiUseSection" class="multiUseSection">
+            <h2>5+ MULTI / MIXED USE PROPERTY DETAILS</h2>
+            <div class="forms">
+              <label>
+                Building height (stories/floors)
+                <input type="text" name="buildingHeight" />
+              </label>
+              <label id="residentialUnits">
+                Number of Residential Units
+                <input type="text" name="residentialUnits" />
+              </label>
+              <label id="numOfComUnits">
+                Number of Commercial Units
+                <input type="text" name="numOfComUnits" />
+              </label>
+              <label id="totalUnitCount">
+                Total Unit Count
+                <input type="text" name="totalUnitCount" />
+              </label>
+              <label id="combinedSqFt">
+                Total Combined Sq Ft of Residential Units
+                <input type="text" name="combinedSqFt" />
+              </label>
+              <label id="combinedCommercial">
+                Total Combined Sq Ft of Commercial Units
+                <input type="text" name="combinedCommercial" />
+              </label>
+              <label id="totalSqFt">
+                Total Sq Footage
+                <input type="text" name="totalSqFt" />
+              </label>
+              <label id="currentVacant">
+                Current number of VACANT Units
+                <input type="text" name="currentVacant" />
+              </label>
+              <label id="vacantResidential">
+                Number of Vacant Residential Units
+                <input type="text" name="vacantResidential" />
+              </label>
+              <label id="vacantCommercial">
+                Number of Vacant Commercial Units
+                <input type="text" name="vacantCommercial" />
+              </label>
+              <label id="currentTotalIncome">
+                What is the CURRENT total income generated by all occupied
+                units?
+                <input type="text" name="currentTotalIncome" />
+              </label>
+              <section id="curTotalIncome" class="radio-section">
+                <h3>Current total income per?</h3>
+                <div class="radio-group">
+                  <label
+                    >Month
+                    <input type="radio" name="curTotalIncome" value="month" />
+                  </label>
+                  <label
+                    >Year
+                    <input type="radio" name="curTotalIncome" value="year" />
+                  </label>
+                </div>
+              </section>
+              <label id="currentTotalIncomeValue">
+                CURRENT total annual income generated by all occupied units?
+                <input type="text" name="currentTotalIncomeValue" />
+              </label>
+              <label id="currentRentalIncomePercentage">
+                What percentage of CURRENT rental income can be attributed to
+                the commercial units?
+                <input type="text" name="currentRentalIncomePercentage" />
+              </label>
+              <label id="expectedTotalIncome">
+                What is the EXPECTED total income when renovated/stabilized?
+                <input type="text" name="expectedTotalIncome" />
+              </label>
+              <section id="expTotalIncomePer" class="radio-section">
+                <h3>Current total income per?</h3>
+                <div class="radio-group">
+                  <label
+                    >Month
+                    <input
+                      type="radio"
+                      name="expTotalIncomePer"
+                      value="month"
+                    />
+                  </label>
+                  <label
+                    >Year
+                    <input type="radio" name="expTotalIncomePer" value="year" />
+                  </label>
+                </div>
+              </section>
+              <label id="expectedTotalIncomeAnually">
+                EXPECTED total annual income when renovated/stabilized?
+                <input type="text" name="expectedTotalIncomeAnually" />
+              </label>
+              <label>
+                Project Summary
+                <textarea type="text" name="projectSummary"> </textarea>
+              </label>
+              <section class="radio-section">
+                <h3>
+                  Does borrower have any experience with 5+ Multi or Mixed Use
+                  Properties?
+                </h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input type="radio" name="expInMulti" value="yes" />
+                  </label>
+                  <label
+                    >No
+                    <input type="radio" name="expInMulti" value="no" />
+                  </label>
+                </div>
+              </section>
+              <label id="multiBorrowerExperience">
+                Please provide a brief description of borrower's relevant
+                experience:
+                <textarea type="text" name="multiBorrowerExperience">
+                </textarea>
+              </label>
+              <label>
+                Sponsor net worth
+                <input type="text" name="MultiSponsorNetWorth" />
+              </label>
+              <label>
+                Total verifiable assets/liquidity
+                <input type="text" name="MultiTotalAssets" />
+              </label>
+              <label
+                >Current property management
+                <select
+                  name="CurrentPropertyManagement"
+                  id="CurrentPropertyManagement"
+                >
+                  <option value="">Select a property type</option>
+                  <option value="self">Self Managed</option>
+                  <option value="professional">
+                    Professional property manager
+                  </option>
+                  <option value="other">Other, please describe</option>
+                  <span class="focus"></span></select
+              ></label>
+              <label id="multiOtherManagement">
+                Other current property management
+                <textarea type="text" name="multiOtherManagement"> </textarea>
+              </label>
+              <label
+                >Property management after stabilized
+                <select
+                  name="PropertyManagementAfterStabilized"
+                  id="PropertyManagementAfterStabilized"
+                >
+                  <option value="">Select a property type</option>
+                  <option value="self">Self Managed</option>
+                  <option value="professional">
+                    Professional property manager
+                  </option>
+                  <option value="other">Other, please describe</option>
+                  <span class="focus"></span></select
+              ></label>
+              <label id="multiOtherManagementAfterStabilized">
+                Other property management after stabilized
+                <textarea
+                  type="text"
+                  name="multiOtherManagementAfterStabilized"
+                >
+                </textarea>
+              </label>
+              <section id="MultiExitStrat" class="radio-section">
+                <h3>Exit strategy?</h3>
+                <div class="radio-group">
+                  <label
+                    >Sell
+                    <input type="radio" name="MultiExitStrat" />
+                  </label>
+                  <label
+                    >Refinance
+                    <input type="radio" name="MultiExitStrat" />
+                  </label>
+                  <label
+                    >Unsure
+                    <input type="radio" name="exitStrat" id="exitStratUnsure" />
+                  </label>
+                </div>
+              </section>
+            </div>
+          </section>
+          <input class="submit" type="submit" value="Submit" />
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
