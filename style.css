@@ -24,7 +24,6 @@ body {
 }
 #intakeform .container {
   background-color: #fff;
-  min-height: 100vh;
   max-width: 700px;
   margin: 0 auto;
   border-radius: var(--border-radius);
@@ -176,5 +175,11 @@ body {
 @media (max-width: 600px) {
   #intakeform .forms {
     grid-template-columns: 1fr;
+  }
+  body {
+    min-height: 10vh;
+  }
+  #intakeform .container {
+    min-height: 10vh !important;
   }
 }
