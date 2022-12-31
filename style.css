@@ -97,11 +97,16 @@ body {
 #intakeform form select:focus {
   outline: 2px solid var(--brand-color);
 }
-#intakeform form select:hover {
+#intakeform form select:hover,
+#intakeform form input[type="date"]:hover {
   cursor: pointer;
 }
 #intakeform form input:hover,
-#intakeform select:hover {
+#intakeform select:hover,
+#intakeform form textarea:hover,
+#intakeform form input:focus,
+#intakeform select:focus,
+#intakeform form textarea:focus {
   background-color: var(--input-hover-bg);
 }
 #intakeform form input[type="submit"] {
@@ -213,5 +218,10 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
+  }
+}
+@media (min-width: 800px) {
+  #intakeform .container {
+    min-width: 800px;
   }
 }
