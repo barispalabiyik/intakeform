@@ -749,6 +749,95 @@
               <!--Renovation Form End-->
             </section>
           </section>
+          <section id="propHistoryGUCSection">
+            <!--PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use) Section -->
+            <h2>PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use)</h2>
+            <section class="forms">
+              <label>
+                Estimated as-is value
+                <input type="text" name="propHistoryGUCAsIsValue" />
+              </label>
+              <label>
+                Amount of existing debt
+                <input type="text" name="propHistoryGUCExistingDebt" />
+              </label>
+
+              <section id="PropHistoryGUCRadio" class="radio-section">
+                <h3>What this property acquired in last 24 months?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input
+                      value="yes"
+                      type="radio"
+                      name="PropHistoryGUCRadio"
+                    />
+                  </label>
+                  <label
+                    >No
+                    <input value="no" type="radio" name="PropHistoryGUCRadio" />
+                  </label>
+                </div>
+              </section>
+              <label id="propHistoryGUCDate">
+                Date/Time
+                <input type="date" name="propHistoryGUCDate" />
+              </label>
+              <label id="propHistoryGUCPrice">
+                Purchase price
+                <input type="text" name="propHistoryGUCPrice" />
+              </label>
+              <label id="propHistoryGUCRenovations">
+                Renovations Completed Since Purchase
+                <input type="text" name="propHistoryGUCRenovations" />
+              </label>
+
+              <!--PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use) Section End -->
+            </section>
+          </section>
+
+          <section id="propHistorySection">
+            <!--PROPERTY HISTORY -->
+            <h2>PROPERTY HISTORY</h2>
+            <section class="forms">
+              <label>
+                Estimated as-is value
+                <input type="text" name="propHistoryAsIsValue" />
+              </label>
+              <label>
+                Amount of existing debt
+                <input type="text" name="propHistoryExistingDebt" />
+              </label>
+
+              <section id="PropHistoryRadio" class="radio-section">
+                <h3>What this property acquired in last 12 months?</h3>
+                <div class="radio-group">
+                  <label
+                    >Yes
+                    <input value="yes" type="radio" name="PropHistoryRadio" />
+                  </label>
+                  <label
+                    >No
+                    <input value="no" type="radio" name="PropHistoryRadio" />
+                  </label>
+                </div>
+              </section>
+              <label id="propHistoryDate">
+                Date/Time
+                <input type="date" name="propHistoryDate" />
+              </label>
+              <label id="propHistoryPrice">
+                Purchase price
+                <input type="text" name="propHistoryPrice" />
+              </label>
+              <label id="propHistoryPrice">
+                Renovations Completed Since Purchase
+                <input type="text" name="propHistoryRenovations" />
+              </label>
+
+              <!--PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use) Section End -->
+            </section>
+          </section>
         </fieldset>
         <input class="submit" type="submit" value="Submit" />
       </form>

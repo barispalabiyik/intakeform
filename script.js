@@ -207,6 +207,40 @@ $(document).ready(function () {
     ChangeVisiblity(selected == "yes", "#renovationDetailsSection");
   });
 
+  // PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use) Conditional Fields
+
+  $(
+    "#propHistoryGUCSection,#propHistoryGUCDate,#propHistoryGUCPrice,#propHistoryGUCPrice"
+  ).addClass("hidden");
+
+  $("input[type=radio][name=loanType]").change(function () {
+    ChangeVisiblity(this.value == "refinance", "#propHistoryGUCSection");
+  });
+
+  $("input[type=radio][name=PropHistoryGUCRadio]").change(function () {
+    ChangeVisiblity(
+      this.value == "yes",
+      "#propHistoryGUCDate,#propHistoryGUCPrice,#propHistoryGUCPrice"
+    );
+  });
+
+  // PROPERTY HISTORY  Conditional Fields
+
+  $(
+    "#propHistorySection,#propHistoryDate,#propHistoryPrice,#propHistoryPrice"
+  ).addClass("hidden");
+
+  $("input[type=radio][name=loanType]").change(function () {
+    ChangeVisiblity(this.value == "refinance", "#propHistorySection");
+  });
+
+  $("input[type=radio][name=PropHistoryRadio]").change(function () {
+    ChangeVisiblity(
+      this.value == "yes",
+      "#propHistoryDate,#propHistoryPrice,#propHistoryPrice"
+    );
+  });
+
   // Conditional Field Logic End
 });
 
