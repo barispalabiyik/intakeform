@@ -114,7 +114,6 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 18px;
-  box-shadow: 0 0 7px 0 var(--brand-color);
   margin-top: 20px;
   color: #fff;
   border: 1px solid var(--brand-color);
