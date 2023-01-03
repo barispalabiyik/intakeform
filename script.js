@@ -306,6 +306,9 @@ $(document).ready(function () {
   // Uploaded Files List
 
   $("#guarantorFileUpload").change(function () {
+    $(".selected-files-list").remove();
+    $(".file-header").empty();
+
     $(".file-header").append(
       `<span>Selected files:</span>
       <span class="selected-files__reset">Remove Files</span>`
@@ -316,6 +319,7 @@ $(document).ready(function () {
       );
     }
   });
+
   $(".selected-files").on("click", ".selected-files__reset", function () {
     $("#guarantorFileUpload").val("");
     $(".selected-files-list").remove();
