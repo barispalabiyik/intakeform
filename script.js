@@ -24,6 +24,12 @@ $(document).ready(function () {
 
   //Subject Property Conditional Fields
 
+  states.forEach((state) => {
+    $("#propertyState").append(
+      $("<option></option>").attr("value", state.value).text(state.name)
+    );
+  });
+
   // Setting initial invisibility for Subject Property Section
 
   $(
@@ -292,7 +298,7 @@ $(document).ready(function () {
   // Guarantor Information Conditional Fields
 
   states.forEach((state) => {
-    $("#guarantorState,#propertyState").append(
+    $("#guarantorState").append(
       $("<option></option>").attr("value", state.value).text(state.name)
     );
   });
