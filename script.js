@@ -353,6 +353,25 @@ $(document).ready(function () {
     );
   });
 
+  // Uploaded Files List
+
+  $("#guarantorFileUpload").change(function () {
+    $(".file-header").append(
+      `<span>Selected files:</span>
+      <span class="selected-files__reset">Remove Files</span>`
+    );
+    for (const file of this.files) {
+      $(".selected-list").append(
+        `<div class="selected-files-list"><span>${file.name}</span></div>`
+      );
+    }
+  });
+  $(".selected-files").on("click", ".selected-files__reset", function () {
+    $("#guarantorFileUpload").val("");
+    $(".selected-files-list").remove();
+    $(".file-header").empty();
+  });
+
   // Conditional Field Logic End
 });
 
@@ -392,6 +411,7 @@ $("#lenderIntakeForm").validate({
       required: true,
       number: true,
     },
+
     guarantorPhone: {
       required: true,
       number: true,

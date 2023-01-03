@@ -1118,7 +1118,7 @@
                 Ownership %
                 <input type="text" name="guarantorOwnership" />
               </label>
-               <label>
+              <label>
                 Estimated FICO score
                 <input placeholder="650" type="text" name="guarantorFICO" />
               </label>
@@ -1130,7 +1130,7 @@
                 <div class="address-fields">
                   <label>
                     City
-                    <input type="text" name="guarantorCity"> </input>
+                    <input type="text" name="guarantorCity" />
                   </label>
                   <label>
                     State
@@ -1139,14 +1139,25 @@
                   ></label>
                   <label>
                     Zip
-                    <input type="text" name="guarantorZip"> </input>
+                    <input type="text" name="guarantorZip" />
                   </label>
                 </div>
               </div>
-                <label class="full-span">
-                Upload Credit and background authorization 
-                <input type="file"  name="guarantorFile" />
+
+              <label class="full-span">
+                Upload Credit and background authorization
+                <input
+                  id="guarantorFileUpload"
+                  multiple
+                  accept="jpg,jpeg,gif,png,bmp,tif,psd,pdf,doc,docx,csv,xls,xlsx,txt,mp3,mp4,aac,wav,au,wmv,avi,mpg,mpeg,zip,gz,rar,z,tgz,tar,sitx"
+                  type="file"
+                  name="guarantorFile"
+                />
               </label>
+              <div class="selected-files">
+                <div class="file-header"></div>
+                <div class="selected-list"></div>
+              </div>
             </section>
           </section>
         </fieldset>

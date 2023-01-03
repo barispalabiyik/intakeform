@@ -111,12 +111,14 @@ body {
   outline: 2px solid var(--brand-color);
 }
 #intakeform form select:hover,
-#intakeform form input[type="date"]:hover {
+#intakeform form input[type="date"]:hover,
+#intakeform form input[type="file"]:hover {
   cursor: pointer;
 }
 #intakeform form input:hover,
 #intakeform select:hover,
 #intakeform form textarea:hover,
+#intakeform input[type="file"]:hover,
 #intakeform form input:focus,
 #intakeform select:focus,
 #intakeform form textarea:focus {
@@ -230,6 +232,39 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
+}
+#intakeform .selected-files {
+  grid-column: span 2;
+}
+
+#intakeform .file-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#intakeform .selected-files__reset {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  color: var(--brand-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#intakeform .selected-files__reset:hover {
+  text-decoration: underline;
+}
+
+#intakeform .selected-files-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  align-items: center;
+  border-bottom: 1px solid var(--input-hover-bg);
 }
 
 @media (max-width: 600px) {
