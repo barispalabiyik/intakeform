@@ -150,6 +150,11 @@ body {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+#intakeform form fieldset label:has(span) {
+  min-height: 65px;
+}
+
 #intakeform form fieldset label.error {
   color: var(--error-color);
   font-size: 12px;
@@ -160,16 +165,17 @@ body {
   background-color: transparent;
   min-height: 10px;
   max-height: 15px;
+  padding-left: 0px;
+  font-weight: 600;
 }
 
 #intakeform form fieldset label:has(span) label.error {
   position: absolute;
   top: -20px;
 }
-#intakeform form fieldset input.error {
-  border: 1px solid var(--error-color);
-}
-#intakeform form fieldset select.error {
+#intakeform form fieldset input.error,
+#intakeform form fieldset select.error,
+#intakeform form fieldset textarea.error {
   border: 1px solid var(--error-color);
 }
 

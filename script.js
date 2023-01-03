@@ -340,6 +340,10 @@ $("#lenderIntakeForm").validate({
     propertyType: {
       required: true,
     },
+    howManyUnits: {
+      required: true,
+      number: true,
+    },
     propertyAddress: {
       required: true,
     },
@@ -352,8 +356,7 @@ $("#lenderIntakeForm").validate({
     propertyZip: {
       required: true,
       number: true,
-      minLength: 5,
-      maxLength: 5,
+      range: [10000, 99999],
     },
     describePType: {
       required: true,
@@ -361,14 +364,104 @@ $("#lenderIntakeForm").validate({
     loanProgram: {
       required: true,
     },
+    loanType: {
+      required: true,
+    },
+    radioIncluded: {
+      required: true,
+    },
     purchasePrice: {
       required: true,
       number: true,
     },
-    loanType: {
+    payoffAmount: {
+      required: true,
+      number: true,
+    },
+    renovationRadio: {
       required: true,
     },
-
+    blanketRadio: {
+      required: true,
+    },
+    borrowerExperience: {
+      required: true,
+    },
+    exitStrat: {
+      required: true,
+    },
+    gucExperience: {
+      required: true,
+    },
+    gcOrBuilder: {
+      required: true,
+    },
+    GUCsponsorNetWorth: {
+      required: true,
+      number: true,
+    },
+    GUCtotalAssets: {
+      required: true,
+      number: true,
+    },
+    GUCtotalHardCosts: {
+      required: true,
+      number: true,
+    },
+    GUCtotalSoftCosts: {
+      required: true,
+      number: true,
+    },
+    GUCtotalConsCost: {
+      required: true,
+      number: true,
+    },
+    GUCbuiltValue: {
+      required: true,
+      number: true,
+    },
+    GUCexitStrat: {
+      required: true,
+    },
+    GUCestimatedRent: {
+      required: true,
+      number: true,
+    },
+    GUCentitlements: {
+      required: true,
+    },
+    GUCentitlementsInPlace: {
+      required: true,
+    },
+    GUCplansSpecsAvailable: {
+      required: true,
+    },
+    GUCwillPlanInPlace: {
+      required: true,
+    },
+    GUCapprovedPermitsInPlace: {
+      required: true,
+    },
+    GUCapprovedPermits: {
+      required: true,
+    },
+    buildingHeight: {
+      required: true,
+      number: true,
+    },
+    residentialUnits: {
+      required: true,
+      number: true,
+    },
+    numOfComUnits: {
+      required: true,
+      number: true,
+    },
+    totalUnitCount: {
+      required: true,
+      number: true,
+    },
+    // break
     currentTotalIncome: {
       required: true,
       number: true,
@@ -377,7 +470,21 @@ $("#lenderIntakeForm").validate({
       required: true,
       number: true,
     },
+    guarantorFirstName: {
+      required: true,
+    },
+    guarantorLastName: {
+      required: true,
+    },
+    guarantorEmail: {
+      required: true,
+      email: true,
+    },
     guarantorPhone: {
+      required: true,
+      number: true,
+    },
+    guarantorOwnership: {
       required: true,
       number: true,
     },
@@ -387,6 +494,11 @@ $("#lenderIntakeForm").validate({
       range: [600, 850],
     },
   },
+  messages: {
+    propertyZip: {
+      range: "Please enter a valid zip code",
+    },
+  }, // end messages
 });
 
 const states = [
