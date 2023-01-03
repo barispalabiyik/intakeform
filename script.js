@@ -24,6 +24,8 @@ $(document).ready(function () {
 
   //Subject Property Conditional Fields
 
+  // Conditional Logic follows the Formstack Prototype : CL/BLN Submission
+
   states.forEach((state) => {
     $("#propertyState").append(
       $("<option></option>").attr("value", state.value).text(state.name)
@@ -306,9 +308,10 @@ $(document).ready(function () {
   // Uploaded Files List
 
   $("#guarantorFileUpload").change(function () {
+    // Remove all previous files
     $(".selected-files-list").remove();
     $(".file-header").empty();
-
+    // Add new files
     $(".file-header").append(
       `<span>Selected files:</span>
       <span class="selected-files__reset">Remove Files</span>`
