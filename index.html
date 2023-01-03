@@ -21,7 +21,7 @@
           <h2>SUBJECT PROPERTY</h2>
           <section class="forms">
             <!--Subject Property Section-->
-            <label
+            <label class="full-span"
               >Property Type
               <select name="propertyType" id="propertyType">
                 <option value="">Select a property type</option>
@@ -36,16 +36,37 @@
                 <option value="other">Other</option>
                 <span class="focus"></span></select
             ></label>
-            <label id="howManyUnits"
+            <label id="howManyUnits" class="full-span"
               >How Many Units? <input type="text" name="howManyUnits"
             /></label>
-            <div class="commercial-important-note important">
+            <div class="commercial-important-note important full-span">
               <h3>Important!</h3>
               <p>
                 At this time, we do not offer loans on commerical properties.
               </p>
             </div>
-            <label>
+            <div class="full-span">
+              <h3>Address</h3>
+              <label>
+                <textarea type="text" name="propertyAddress"></textarea>
+              </label>
+              <div class="address-fields">
+                <label>
+                  City
+                  <input type="text" name="propertyCity" />
+                </label>
+                <label>
+                  State
+                  <select id="propertyState" name="propertyState">
+                    <span class="focus"></span></select
+                ></label>
+                <label>
+                  Zip
+                  <input type="text" name="propertyZip" />
+                </label>
+              </div>
+            </div>
+            <!-- <label>
               Street Address
               <input type="text" name="street" />
             </label>
@@ -64,8 +85,8 @@
             <label>
               Zip Code
               <input type="text" name="zip" />
-            </label>
-            <label id="describePType">
+            </label> -->
+            <label id="describePType" class="full-span">
               Describe Property Type
               <input type="text" name="describePType" />
             </label>
@@ -588,7 +609,7 @@
               </label>
               <label>
                 Project Summary
-                <textarea type="text" name="projectSummary"> </textarea>
+                <textarea type="text" name="projectSummary"></textarea>
               </label>
               <section class="radio-section">
                 <h3>
@@ -609,8 +630,7 @@
               <label id="multiBorrowerExperience">
                 Please provide a brief description of borrower's relevant
                 experience:
-                <textarea type="text" name="multiBorrowerExperience">
-                </textarea>
+                <textarea type="text" name="multiBorrowerExperience"></textarea>
               </label>
               <label>
                 Sponsor net worth
@@ -640,7 +660,7 @@
               ></label>
               <label id="multiOtherManagement">
                 Other current property management
-                <textarea type="text" name="multiOtherManagement"> </textarea>
+                <textarea type="text" name="multiOtherManagement"></textarea>
               </label>
               <label
                 >Property management after stabilized
@@ -661,8 +681,7 @@
                 <textarea
                   type="text"
                   name="multiOtherManagementAfterStabilized"
-                >
-                </textarea>
+                ></textarea>
               </label>
               <section id="MultiExitStrat" class="radio-section">
                 <h3>Exit strategy?</h3>
@@ -759,7 +778,7 @@
               </section>
               <label id="brieflyDescribe">
                 Briefly describe changes:
-                <textarea type="text" name="brieflyDescribe"> </textarea>
+                <textarea type="text" name="brieflyDescribe"></textarea>
               </label>
               <label id="approxSizeOfAddition">
                 (Approx.) size of addition in square feet:
@@ -1125,7 +1144,7 @@
               <div class="full-span">
                 <h3>Address</h3>
                 <label>
-                  <textarea type="text" name="guarantorAddress"> </textarea>
+                  <textarea type="text" name="guarantorAddress"></textarea>
                 </label>
                 <div class="address-fields">
                   <label>
@@ -1158,7 +1177,16 @@
                 <div class="file-header"></div>
                 <div class="selected-list"></div>
               </div>
+              <div class="guarantor-buttons">
+                <button disabled class="add-guarantor">
+                  Add Another Guarantor
+                </button>
+                <button disabled class="remove-guarantor">
+                  Remove Guarantor
+                </button>
+              </div>
             </section>
+            <!--GUARANTOR DETAILS END -->
           </section>
         </fieldset>
         <input class="submit" type="submit" value="Submit" />

@@ -254,6 +254,23 @@ body {
   border-bottom: 1px solid var(--input-hover-bg);
 }
 
+#intakeform .guarantor-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+#intakeform .guarantor-buttons button {
+  background: transparent;
+  border: 0;
+  color: var(--brand-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#intakeform .guarantor-buttons button:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   #intakeform .forms {
     display: grid;
@@ -284,7 +301,8 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
   }
-  #intakeform .selected-files {
+  #intakeform .selected-files,
+  #intakeform .guarantor-buttons {
     grid-column: span 2;
   }
 }
