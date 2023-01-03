@@ -155,7 +155,7 @@ body {
   min-height: 65px;
 }
 
-#intakeform form fieldset label.error {
+#intakeform form fieldset div.error {
   color: var(--error-color);
   font-size: 12px;
   margin-top: 5px;
@@ -169,7 +169,7 @@ body {
   font-weight: 600;
 }
 
-#intakeform form fieldset label:has(span) label.error {
+#intakeform form fieldset label:has(span) div.error {
   position: absolute;
   top: -20px;
 }

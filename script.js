@@ -336,6 +336,7 @@ jQuery.validator.addMethod(
 );
 
 $("#lenderIntakeForm").validate({
+  errorElement: "div",
   rules: {
     propertyType: {
       required: true,
@@ -493,9 +494,26 @@ $("#lenderIntakeForm").validate({
       number: true,
       range: [600, 850],
     },
+    guarantorAddress: {
+      required: true,
+    },
+    guarantorCity: {
+      required: true,
+    },
+    guarantorState: {
+      required: true,
+    },
+    guarantorZip: {
+      required: true,
+      number: true,
+      range: [10000, 99999],
+    },
   },
   messages: {
     propertyZip: {
+      range: "Please enter a valid zip code",
+    },
+    guarantorZip: {
       range: "Please enter a valid zip code",
     },
   }, // end messages
