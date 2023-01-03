@@ -11,6 +11,17 @@ $(document).ready(function () {
     }
   }
 
+  // Adding Currency Formatting to Input Fields
+  let currentCurrency = "$";
+  $(".currency").after(`<span style="margin: -35px 0 0 10px;
+    width: fit-content;" >${currentCurrency}</span>`);
+  $(".currency").on("keyup", function () {
+    let value = $(this).val();
+    let formattedValue = value.replace(/\D/g, "");
+    formattedValue = formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    $(this).val(formattedValue);
+  });
+
   //Subject Property Conditional Fields
 
   // Setting initial invisibility for Subject Property Section
