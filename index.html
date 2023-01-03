@@ -152,7 +152,7 @@
             </label>
             <label id="payoffAmount"
               >Estimated Payoff Amount
-              <input type="text" name="payoffAmount" />
+              <input class="currency" type="text" name="payoffAmount" />
             </label>
             <div id="renovationRadio" class="radio-section">
               <h3>Subject property in need of renovation?</h3>
@@ -881,6 +881,272 @@
               </label>
 
               <!--PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use) Section End -->
+            </section>
+          </section>
+
+          <section id="rentInformationSection">
+            <!--RENT INFORMATION -->
+            <h2>RENT INFORMATION</h2>
+            <section class="forms">
+              <section id="leasingStrategy" class="radio-section">
+                <h3>What is the leasing strategy?</h3>
+                <div class="radio-group">
+                  <label
+                    >Long term
+                    <input
+                      value="longTerm"
+                      type="radio"
+                      name="leasingStrategy"
+                    />
+                  </label>
+                  <label
+                    >Short term / Vacation
+                    <input
+                      value="shortTerm"
+                      type="radio"
+                      name="leasingStrategy"
+                    />
+                  </label>
+                </div>
+              </section>
+              <section id="currentOccupancy" class="radio-section">
+                <h3>What is the leasing strategy?</h3>
+                <div class="radio-group">
+                  <label
+                    >Vacant
+                    <input
+                      value="vacant"
+                      type="radio"
+                      name="currentOccupancy"
+                    />
+                  </label>
+                  <label
+                    >Leased
+                    <input
+                      value="leased"
+                      type="radio"
+                      name="currentOccupancy"
+                    />
+                  </label>
+                </div>
+              </section>
+              <label id="rentInfoCurrentMonthlyRent">
+                CURRENT Monthly Rent
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoCurrentMonthlyRent"
+                />
+              </label>
+              <label id="rentInfoEstimatedMonthlyRent">
+                Estimated Monthly MARKET Rent
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoEstimatedMonthlyRent"
+                />
+              </label>
+              <label>
+                Combined total CURRENT monthly rental income for all rented
+                units
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoCombinedIncome"
+                />
+              </label>
+              <label>
+                What is the total estimated monthly MARKET rent for all VACANT
+                units?
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoTotalMarketRent"
+                />
+              </label>
+              <label>
+                (Monthly) HOA or PUD Fees
+                <input class="currency" type="text" name="rentInfoHOAorPUD" />
+              </label>
+              <label>
+                Annual Property Tax:
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoAnnualPropertyTax"
+                />
+              </label>
+              <label>
+                Annual Insurance Premium (inc. Flood, if applicable)
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoAnnualInsurancePremium"
+                />
+              </label>
+            </section>
+            <!--RENT INFORMATION Section End -->
+          </section>
+          <section id="rentInformationSection">
+            <!--RENT INFORMATION -->
+            <h2>RENT INFORMATION</h2>
+            <section class="forms">
+              <section id="leasingStrategy" class="radio-section">
+                <h3>What is the leasing strategy?</h3>
+                <div class="radio-group">
+                  <label
+                    >Long term
+                    <input
+                      value="longTerm"
+                      type="radio"
+                      name="leasingStrategy"
+                    />
+                  </label>
+                  <label
+                    >Short term / Vacation
+                    <input
+                      value="shortTerm"
+                      type="radio"
+                      name="leasingStrategy"
+                    />
+                  </label>
+                </div>
+              </section>
+              <section id="currentOccupancy" class="radio-section">
+                <h3>What is the leasing strategy?</h3>
+                <div class="radio-group">
+                  <label
+                    >Vacant
+                    <input
+                      value="vacant"
+                      type="radio"
+                      name="currentOccupancy"
+                    />
+                  </label>
+                  <label
+                    >Leased
+                    <input
+                      value="leased"
+                      type="radio"
+                      name="currentOccupancy"
+                    />
+                  </label>
+                </div>
+              </section>
+              <label id="rentInfoCurrentMonthlyRent">
+                CURRENT Monthly Rent
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoCurrentMonthlyRent"
+                />
+              </label>
+              <label id="rentInfoEstimatedMonthlyRent">
+                Estimated Monthly MARKET Rent
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoEstimatedMonthlyRent"
+                />
+              </label>
+              <label>
+                Combined total CURRENT monthly rental income for all rented
+                units
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoCombinedIncome"
+                />
+              </label>
+              <label>
+                What is the total estimated monthly MARKET rent for all VACANT
+                units?
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoTotalMarketRent"
+                />
+              </label>
+              <label>
+                (Monthly) HOA or PUD Fees
+                <input class="currency" type="text" name="rentInfoHOAorPUD" />
+              </label>
+              <label>
+                Annual Property Tax:
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoAnnualPropertyTax"
+                />
+              </label>
+              <label>
+                Annual Insurance Premium (inc. Flood, if applicable)
+                <input
+                  class="currency"
+                  type="text"
+                  name="rentInfoAnnualInsurancePremium"
+                />
+              </label>
+            </section>
+            <!--RENT INFORMATION Section End -->
+          </section>
+          <section>
+            <!--GUARANTOR DETAILS -->
+            <h2>GUARANTOR DETAILS</h2>
+            <h3 class="sub-heading">
+              Please add additional guarantors for each person who holds a stake
+              in the property of 20%+
+            </h3>
+            <section class="forms">
+              <label>
+                First Name
+                <input type="text" name="guarantorFirstName" />
+              </label>
+              <label>
+                Last Name
+                <input type="text" name="guarantorLastName" />
+              </label>
+              <label>
+                Email
+                <input type="email" name="guarantorEmail" />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="guarantorPhone" />
+              </label>
+              <label>
+                Ownership %
+                <input type="text" name="guarantorOwnership" />
+              </label>
+               <label>
+                Estimated FICO score
+                <input placeholder="650" type="text" name="guarantorFICO" />
+              </label>
+              <div class="full-span">
+                <h3>Address</h3>
+                <label>
+                  <textarea type="text" name="guarantorAddress"> </textarea>
+                </label>
+                <div class="address-fields">
+                  <label>
+                    City
+                    <input type="text" name="guarantorCity"> </input>
+                  </label>
+                  <label>
+                    State
+                    <select id="guarantorState" name="guarantorState">
+                      <span class="focus"></span></select
+                  ></label>
+                  <label>
+                    Zip
+                    <input type="text" name="guarantorZip"> </input>
+                  </label>
+                </div>
+              </div>
+                <label class="full-span">
+                Upload Credit and background authorization 
+                <input type="file"  name="guarantorFile" />
+              </label>
             </section>
           </section>
         </fieldset>
