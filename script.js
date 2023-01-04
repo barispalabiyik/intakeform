@@ -35,7 +35,7 @@ $(document).ready(function () {
   // Setting initial invisibility for Subject Property Section
 
   $(
-    "#howManyUnits,.commercial-important-note,#unitNumber,#describePType,#wholesalerIncludedSection"
+    "#purchaseDate,#howManyUnits,.commercial-important-note,#unitNumber,#describePType,#wholesalerIncludedSection"
   ).addClass("hidden");
 
   $("#propertyType").change(function () {
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
   $("input[type=radio][name=loanType]").change(function () {
     ChangeVisiblity(this.value == "purchase", "#purchasePrice");
-    ChangeVisiblity(this.value == "refinance", "#payoffAmount");
+    ChangeVisiblity(this.value == "refinance", "#payoffAmount,#purchaseDate");
   });
 
   $("input[type=radio][name=loanProgram]").change(function () {
@@ -229,7 +229,7 @@ $(document).ready(function () {
   // PROPERTY HISTORY (GUC / 5+ Multi / Mixed-Use) Conditional Fields
 
   $(
-    "#propHistoryGUCSection,#propHistoryGUCDate,#propHistoryGUCPrice,#propHistoryGUCPrice"
+    "#propHistoryGUCSection,#propHistoryGUCPrice,#propHistoryGUCPrice"
   ).addClass("hidden");
 
   $("input[type=radio][name=loanType]").change(function () {
@@ -239,25 +239,22 @@ $(document).ready(function () {
   $("input[type=radio][name=PropHistoryGUCRadio]").change(function () {
     ChangeVisiblity(
       this.value == "yes",
-      "#propHistoryGUCDate,#propHistoryGUCPrice,#propHistoryGUCPrice"
+      "#propHistoryGUCPrice,#propHistoryGUCPrice"
     );
   });
 
   // PROPERTY HISTORY  Conditional Fields
 
-  $(
-    "#propHistorySection,#propHistoryDate,#propHistoryPrice,#propHistoryPrice"
-  ).addClass("hidden");
+  $("#propHistorySection,#propHistoryPrice,#propHistoryPrice").addClass(
+    "hidden"
+  );
 
   $("input[type=radio][name=loanType]").change(function () {
     ChangeVisiblity(this.value == "refinance", "#propHistorySection");
   });
 
   $("input[type=radio][name=PropHistoryRadio]").change(function () {
-    ChangeVisiblity(
-      this.value == "yes",
-      "#propHistoryDate,#propHistoryPrice,#propHistoryPrice"
-    );
+    ChangeVisiblity(this.value == "yes", "#propHistoryPrice,#propHistoryPrice");
   });
 
   // RENT INFORMATION  Conditional Fields
