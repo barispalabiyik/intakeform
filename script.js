@@ -41,7 +41,7 @@ $(document).ready(function () {
   $("#propertyType").change(function () {
     let selected = $(this).children("option:selected").val();
     ChangeVisiblity(
-      selected == "multifamily" || selected == "mixed" || selected == "vacant",
+      selected == "multifamily" || selected == "mixed" || selected == "twoFour",
       "#howManyUnits"
     );
 
