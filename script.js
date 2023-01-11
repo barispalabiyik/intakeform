@@ -1,10 +1,6 @@
 $(document).ready(function () {
   // Reusable Visibility Function
 
-  $("select").select2({
-    theme: "bln",
-  });
-
   function ChangeVisiblity(condition, selector) {
     if (condition) {
       $(selector).addClass("visible");
@@ -14,6 +10,22 @@ $(document).ready(function () {
       $(selector).removeClass("visible");
     }
   }
+
+  // Reusable Append Options Function
+
+  function AppendOptions(selector, options) {
+    options.forEach((option) => {
+      $(selector).append(
+        $("<option></option>").attr("value", option.value).text(option.name)
+      );
+    });
+  }
+
+  // Select2 Initialization for select inputs scoped to this form
+
+  $("#intakeform select").select2({
+    theme: "bln",
+  });
 
   // Adding Currency Formatting to Input Fields
   let currentCurrency = "$";
@@ -30,11 +42,11 @@ $(document).ready(function () {
 
   // Conditional Logic follows the Formstack Prototype : CL/BLN Submission
 
-  states.forEach((state) => {
-    $("#propertyState").append(
-      $("<option></option>").attr("value", state.value).text(state.name)
-    );
-  });
+  AppendOptions("#propertyState", states);
+
+  AppendOptions("#propertyType", propertyType);
+
+  AppendOptions("select[name=borrowerExperience]", borrowerExperience);
 
   // Setting initial invisibility for Subject Property Section
 
@@ -124,6 +136,14 @@ $(document).ready(function () {
   });
 
   // 5+ Multi/Mixed Property Details Conditional Fields
+
+  AppendOptions(
+    "#PropertyManagementAfterStabilized",
+    PropertyManagementAfterStabilizedOptions
+  );
+
+  AppendOptions("#CurrentPropertyManagement", CurrentPropertyManagementOptions);
+
   $(
     "#multiUseSection,#residentialUnits,#numOfComUnits,#totalUnitCount,#combinedSqFt,#combinedCommercial,#totalSqFt,#vacantResidential,#vacantCommercial,#currentRentalIncomePercentage"
   ).addClass("hidden");
@@ -300,27 +320,13 @@ $(document).ready(function () {
 
   // Guarantor Information Conditional Fields
 
-  states.forEach((state) => {
-    $("#guarantorState").append(
-      $("<option></option>").attr("value", state.value).text(state.name)
-    );
-  });
+  AppendOptions("#guarantorState", states);
 
   // Correspondent Lender Info
 
-  loanOfficers.forEach((loanOfficer) => {
-    $("#correspondentLender").append(
-      $("<option></option>")
-        .attr("value", loanOfficer.value)
-        .text(loanOfficer.name)
-    );
-  });
+  AppendOptions("#correspondentLender", loanOfficers);
 
-  lender.forEach((lender) => {
-    $("#correnspondentLoanOfficer").append(
-      $("<option></option>").attr("value", lender.value).text(lender.name)
-    );
-  });
+  AppendOptions("#correnspondentLoanOfficer", lender);
 
   // Uploaded Files List
 
@@ -632,4 +638,40 @@ const loanOfficers = [
   { value: "12", name: "Loan Officer Michael" },
   { value: "13", name: "Loan Officer Nathan" },
   { value: "14", name: "Loan Officer Oscar" },
+];
+
+const borrowerExperience = [
+  { value: "", name: "Select experience level" },
+  { value: "0", name: "0" },
+  { value: "1-2", name: "1-2" },
+  { value: "3-9", name: "3-9" },
+  { value: "10-19", name: "10-19" },
+  { value: "20-29", name: "20-29" },
+  { value: "30+", name: "30+" },
+];
+
+const propertyType = [
+  { value: "", name: "Select a property type" },
+  { value: "sfr", name: "SFR" },
+  { value: "townhome", name: "Townhome" },
+  { value: "condo", name: "Condo" },
+  { value: "twoFour", name: "2-4 Unit" },
+  { value: "multifamily", name: "Multifamily 5+" },
+  { value: "mixed", name: "Mixed Use" },
+  { value: "commercial", name: "Commercial" },
+  { value: "other", name: "Other" },
+];
+
+const CurrentPropertyManagementOptions = [
+  { value: "", name: "Select an option" },
+  { value: "self", name: "Self Managed" },
+  { value: "professional", name: "Professional property manager" },
+  { value: "other", name: "Other, please describe" },
+];
+
+const PropertyManagementAfterStabilizedOptions = [
+  { value: "", name: "Select an option" },
+  { value: "self", name: "Self Managed" },
+  { value: "professional", name: "Professional property manager" },
+  { value: "other", name: "Other, please describe" },
 ];
