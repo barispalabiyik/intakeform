@@ -189,7 +189,7 @@ body {
 
 #intakeform form fieldset label:has(span) div.error {
   position: absolute;
-  top: -20px;
+  top: -17px;
 }
 #intakeform form fieldset input.error,
 #intakeform form fieldset select.error,
