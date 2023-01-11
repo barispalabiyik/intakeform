@@ -70,7 +70,7 @@ body {
 #intakeform .forms {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
+  grid-gap: 30px;
   justify-content: center;
 }
 
@@ -295,7 +295,7 @@ body {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #intakeform .forms {
     display: grid;
     grid-template-columns: 1fr;
@@ -323,11 +323,17 @@ body {
   #intakeform .address-fields {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
+    grid-gap: 20px;
   }
   #intakeform .selected-files,
   #intakeform .guarantor-buttons {
     grid-column: span 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  #intakeform .container {
+    min-width: 1000px;
   }
 }
 
