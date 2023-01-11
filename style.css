@@ -331,6 +331,8 @@ body {
   }
 }
 
+/* Select 2 Theming, BLN  */
+
 .select2-container {
   min-width: 200px;
 }
@@ -362,7 +364,8 @@ body {
   -moz-transform: rotate(180deg);
 }
 .select2-container--bln span.select2-search input {
-  height: 30px !important;
+  height: 35px !important;
+  border: 2px solid #529bdf;
 }
 
 .select2-container .select2-choice {
