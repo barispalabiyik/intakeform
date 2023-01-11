@@ -32,6 +32,10 @@ $(document).ready(function () {
     );
   });
 
+  $("#propertyState").select2({
+    theme: "bln",
+  });
+
   // Setting initial invisibility for Subject Property Section
 
   $(
@@ -296,8 +300,34 @@ $(document).ready(function () {
 
   // Guarantor Information Conditional Fields
 
+  $("#guarantorState").select2({
+    theme: "bln",
+  });
+
   states.forEach((state) => {
     $("#guarantorState").append(
+      $("<option></option>").attr("value", state.value).text(state.name)
+    );
+  });
+
+  // Correspondent Lender Info
+
+  $("#correspondentLender").select2({
+    theme: "bln",
+  });
+
+  states.forEach((state) => {
+    $("#correspondentLender").append(
+      $("<option></option>").attr("value", state.value).text(state.name)
+    );
+  });
+
+  $("#correnspondentLoanOfficer").select2({
+    theme: "bln",
+  });
+
+  states.forEach((state) => {
+    $("#correnspondentLoanOfficer").append(
       $("<option></option>").attr("value", state.value).text(state.name)
     );
   });
@@ -526,7 +556,6 @@ $("#lenderIntakeForm").validate({
 const states = [
   { value: "", name: "Select State" },
   { value: "AK", name: "Alaska" },
-  { value: "TX", name: "Texas" },
   { value: "AL", name: "Alabama" },
   { value: "AR", name: "Arkansas" },
   { value: "AZ", name: "Arizona" },

@@ -5,19 +5,155 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
     <title>Intake Form</title>
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="validation.js"></script>
     <script defer src="script.js"></script>
+    <!-- Scripts -->
+    <!-- Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <!-- Styles -->
   </head>
   <body id="intakeform">
     <div class="container">
       <form id="lenderIntakeForm" action="posted.html" method="get">
         <fieldset>
+          <section>
+            <!--CORRESPONDENT LENDER INFO -->
+            <h2>CORRESPONDENT LENDER INFO</h2>
+            <section class="forms">
+              <label>
+                Correspondent Lender
+                <select id="correspondentLender" name="correspondentLender">
+                  <span class="focus"></span></select
+              ></label>
+              <label>
+                Correspondent Loan Officer
+                <select
+                  id="correnspondentLoanOfficer"
+                  name="correnspondentLoanOfficer"
+                >
+                  <span class="focus"></span></select
+              ></label>
+            </section>
+            <!--BROKER DETAILS END -->
+          </section>
+          <section>
+            <!--BROKER DETAILS -->
+            <h2>BROKER INFO</h2>
+            <section class="forms">
+              <label>
+                Company Name
+                <input type="text" name="brokerCompanyName" />
+              </label>
+              <label>
+                Email
+                <input type="email" name="brokerEmail" />
+              </label>
+              <label>
+                First Name
+                <input type="text" name="brokerFirstName" />
+              </label>
+              <label>
+                Last Name
+                <input type="text" name="brokerLastName" />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="brokerPhone" />
+              </label>
+            </section>
+            <!--BROKER DETAILS END -->
+          </section>
+          <section>
+            <!--GUARANTOR DETAILS -->
+            <h2>GUARANTOR DETAILS</h2>
+            <h3 class="sub-heading">
+              Please add additional guarantors for each person who holds a stake
+              in the property of 20%+
+            </h3>
+            <section class="forms">
+              <label>
+                Email
+                <input type="email" name="guarantorEmail" />
+              </label>
+              <label>
+                First Name
+                <input type="text" name="guarantorFirstName" />
+              </label>
+              <label>
+                Last Name
+                <input type="text" name="guarantorLastName" />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="guarantorPhone" />
+              </label>
+              <label>
+                Ownership %
+                <input type="text" name="guarantorOwnership" />
+              </label>
+              <label>
+                Estimated FICO score
+                <input placeholder="650" type="text" name="guarantorFICO" />
+              </label>
+              <div class="full-span">
+                <label>
+                  Address
+                  <textarea type="text" name="guarantorAddress"></textarea>
+                </label>
+                <div class="address-fields">
+                  <label>
+                    City
+                    <input type="text" name="guarantorCity" />
+                  </label>
+                  <label>
+                    State
+                    <select id="guarantorState" name="guarantorState">
+                      <span class="focus"></span></select
+                  ></label>
+                  <label>
+                    Zip
+                    <input type="text" name="guarantorZip" />
+                  </label>
+                </div>
+              </div>
+
+              <label class="full-span">
+                Upload Credit and background authorization
+                <input
+                  id="guarantorFileUpload"
+                  multiple
+                  accept="jpg,jpeg,gif,png,bmp,tif,psd,pdf,doc,docx,csv,xls,xlsx,txt,mp3,mp4,aac,wav,au,wmv,avi,mpg,mpeg,zip,gz,rar,z,tgz,tar,sitx"
+                  type="file"
+                  name="guarantorFile"
+                />
+              </label>
+              <div class="selected-files">
+                <div class="file-header"></div>
+                <div class="selected-list"></div>
+              </div>
+              <div class="guarantor-buttons">
+                <button disabled class="add-guarantor">
+                  Add Another Guarantor
+                </button>
+                <button disabled class="remove-guarantor">
+                  Remove Guarantor
+                </button>
+              </div>
+            </section>
+            <!--GUARANTOR DETAILS END -->
+          </section>
           <h2>SUBJECT PROPERTY</h2>
           <section class="forms">
             <!--Subject Property Section-->
@@ -45,8 +181,8 @@
               </p>
             </div>
             <div class="full-span">
-              <h3>Address</h3>
               <label>
+                Address
                 <textarea type="text" name="propertyAddress"></textarea>
               </label>
               <div class="address-fields">
@@ -1111,85 +1247,6 @@
               </label>
             </section>
             <!--RENT INFORMATION Section End -->
-          </section>
-          <section>
-            <!--GUARANTOR DETAILS -->
-            <h2>GUARANTOR DETAILS</h2>
-            <h3 class="sub-heading">
-              Please add additional guarantors for each person who holds a stake
-              in the property of 20%+
-            </h3>
-            <section class="forms">
-              <label>
-                Email
-                <input type="email" name="guarantorEmail" />
-              </label>
-              <label>
-                First Name
-                <input type="text" name="guarantorFirstName" />
-              </label>
-              <label>
-                Last Name
-                <input type="text" name="guarantorLastName" />
-              </label>
-              <label>
-                Phone
-                <input type="tel" name="guarantorPhone" />
-              </label>
-              <label>
-                Ownership %
-                <input type="text" name="guarantorOwnership" />
-              </label>
-              <label>
-                Estimated FICO score
-                <input placeholder="650" type="text" name="guarantorFICO" />
-              </label>
-              <div class="full-span">
-                <h3>Address</h3>
-                <label>
-                  <textarea type="text" name="guarantorAddress"></textarea>
-                </label>
-                <div class="address-fields">
-                  <label>
-                    City
-                    <input type="text" name="guarantorCity" />
-                  </label>
-                  <label>
-                    State
-                    <select id="guarantorState" name="guarantorState">
-                      <span class="focus"></span></select
-                  ></label>
-                  <label>
-                    Zip
-                    <input type="text" name="guarantorZip" />
-                  </label>
-                </div>
-              </div>
-
-              <label class="full-span">
-                Upload Credit and background authorization
-                <input
-                  id="guarantorFileUpload"
-                  multiple
-                  accept="jpg,jpeg,gif,png,bmp,tif,psd,pdf,doc,docx,csv,xls,xlsx,txt,mp3,mp4,aac,wav,au,wmv,avi,mpg,mpeg,zip,gz,rar,z,tgz,tar,sitx"
-                  type="file"
-                  name="guarantorFile"
-                />
-              </label>
-              <div class="selected-files">
-                <div class="file-header"></div>
-                <div class="selected-list"></div>
-              </div>
-              <div class="guarantor-buttons">
-                <button disabled class="add-guarantor">
-                  Add Another Guarantor
-                </button>
-                <button disabled class="remove-guarantor">
-                  Remove Guarantor
-                </button>
-              </div>
-            </section>
-            <!--GUARANTOR DETAILS END -->
           </section>
         </fieldset>
         <input class="submit" type="submit" value="Submit" />
