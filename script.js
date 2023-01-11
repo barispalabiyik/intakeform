@@ -1,6 +1,10 @@
 $(document).ready(function () {
   // Reusable Visibility Function
 
+  $("select").select2({
+    theme: "bln",
+  });
+
   function ChangeVisiblity(condition, selector) {
     if (condition) {
       $(selector).addClass("visible");
@@ -30,10 +34,6 @@ $(document).ready(function () {
     $("#propertyState").append(
       $("<option></option>").attr("value", state.value).text(state.name)
     );
-  });
-
-  $("#propertyState").select2({
-    theme: "bln",
   });
 
   // Setting initial invisibility for Subject Property Section
@@ -300,10 +300,6 @@ $(document).ready(function () {
 
   // Guarantor Information Conditional Fields
 
-  $("#guarantorState").select2({
-    theme: "bln",
-  });
-
   states.forEach((state) => {
     $("#guarantorState").append(
       $("<option></option>").attr("value", state.value).text(state.name)
@@ -312,23 +308,17 @@ $(document).ready(function () {
 
   // Correspondent Lender Info
 
-  $("#correspondentLender").select2({
-    theme: "bln",
-  });
-
-  states.forEach((state) => {
+  loanOfficers.forEach((loanOfficer) => {
     $("#correspondentLender").append(
-      $("<option></option>").attr("value", state.value).text(state.name)
+      $("<option></option>")
+        .attr("value", loanOfficer.value)
+        .text(loanOfficer.name)
     );
   });
 
-  $("#correnspondentLoanOfficer").select2({
-    theme: "bln",
-  });
-
-  states.forEach((state) => {
+  lender.forEach((lender) => {
     $("#correnspondentLoanOfficer").append(
-      $("<option></option>").attr("value", state.value).text(state.name)
+      $("<option></option>").attr("value", lender.value).text(lender.name)
     );
   });
 
@@ -606,4 +596,40 @@ const states = [
   { value: "WI", name: "Wisconsin" },
   { value: "WV", name: "WestVirginia" },
   { value: "WY", name: "Wyoming" },
+];
+
+const lender = [
+  { value: "", name: "Select Lender" },
+  { value: "1", name: "Lender Adam" },
+  { value: "2", name: "Lender Bob" },
+  { value: "3", name: "Lender Charlie" },
+  { value: "4", name: "Lender David" },
+  { value: "5", name: "Lender Edward" },
+  { value: "6", name: "Lender Frank" },
+  { value: "7", name: "Lender George" },
+  { value: "8", name: "Lender Henry" },
+  { value: "9", name: "Lender Isaac" },
+  { value: "10", name: "Lender Kurt" },
+  { value: "11", name: "Lender Larry" },
+  { value: "12", name: "Lender Michael" },
+  { value: "13", name: "Lender Nathan" },
+  { value: "14", name: "Lender Oscar" },
+];
+
+const loanOfficers = [
+  { value: "", name: "Select Loan Officer" },
+  { value: "1", name: "Loan Officer Adam" },
+  { value: "2", name: "Loan Officer Bob" },
+  { value: "3", name: "Loan Officer Charlie" },
+  { value: "4", name: "Loan Officer David" },
+  { value: "5", name: "Loan Officer Edward" },
+  { value: "6", name: "Loan Officer Frank" },
+  { value: "7", name: "Loan Officer George" },
+  { value: "8", name: "Loan Officer Henry" },
+  { value: "9", name: "Loan Officer Isaac" },
+  { value: "10", name: "Loan Officer Kurt" },
+  { value: "11", name: "Loan Officer Larry" },
+  { value: "12", name: "Loan Officer Michael" },
+  { value: "13", name: "Loan Officer Nathan" },
+  { value: "14", name: "Loan Officer Oscar" },
 ];
